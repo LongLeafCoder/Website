@@ -151,8 +151,8 @@ content:
             label: Short introduction
             type: text
           - name: image
-            label: Image URL or /assets path
-            type: string
+            label: Cover image
+            type: image
           - name: imageAlt
             label: Image description
             type: string
