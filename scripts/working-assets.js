@@ -10,6 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   ]);
   document.querySelectorAll('img').forEach(image => {
     const filename = decodeURIComponent(image.getAttribute('src') || '').split('/').pop();
-    if (movedImages.has(filename)) image.src = `wood working/${filename}`;
+    if (movedImages.has(filename)) image.src = `assets/wood working/${filename}`;
   });
 });

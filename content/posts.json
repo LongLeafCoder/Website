@@ -1,0 +1,37 @@
+{
+  "posts": [
+    {
+      "slug": "place-to-return-to",
+      "title": "On making a place you can return to",
+      "category": "Essay",
+      "date": "06.18.26",
+      "summary": "The best personal systems feel less like rules and more like familiar rooms.",
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=85",
+      "imageAlt": "Laptop, notebook, and coffee on a desk",
+      "body": "A workbench teaches you what a homepage rarely can: every tool earns its place by being used. The surface gathers marks, the edges soften, and the small arrangement of things begins to hold a memory of the work.\n\nI think a personal practice needs that same kind of room. Not a perfect system, but a place that makes it easier to begin again.\n\nFor me, that place is somewhere between the shop and the screen, between the grain of a board and the blank page. The work becomes more honest when both sides are allowed to inform each other.",
+      "path": "pages/writing-place.html"
+    },
+    {
+      "slug": "going-somewhere-else",
+      "title": "The creative value of going somewhere else",
+      "category": "Field note",
+      "date": "05.29.26",
+      "summary": "A walk, a long train ride, and the ideas that show up once you stop asking for them.",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85",
+      "imageAlt": "Mountain landscape in soft evening light",
+      "body": "Leaving a familiar room changes the scale of your attention. A road becomes a line, a field becomes a composition, and a small detail on the side of the path becomes enough to carry home.\n\nThat is useful for making. Distance interrupts the habits that tell us what a thing is supposed to be before we have really looked at it.\n\nI come back with fewer answers, which is usually the better material for beginning something new.",
+      "path": "pages/writing-somewhere-else.html"
+    },
+    {
+      "slug": "unfinished-work",
+      "title": "A better relationship with unfinished work",
+      "category": "Process",
+      "date": "04.11.26",
+      "summary": "Some projects need a deadline. Others need a little more time in the dark.",
+      "image": "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1000&q=85",
+      "imageAlt": "Open notebook with handwritten notes",
+      "body": "Unfinished work is not always a problem to solve. Sometimes it is evidence that the question is still alive.\n\nA board can sit on the bench while its final shape becomes clearer. A paragraph can wait for the sentence that gives it a reason to exist. The pause is part of the craft, even when it looks like nothing is happening.\n\nI am learning to leave room for that pause without mistaking it for failure.",
+      "path": "pages/writing-unfinished.html"
+    }
+  ]
+}

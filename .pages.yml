@@ -1,0 +1,164 @@
+media:
+  - name: uploads
+    label: Image uploads
+    input: assets/uploads
+    output: /assets/uploads
+
+content:
+  - name: website-pages
+    label: Website pages
+    type: group
+    items:
+      - name: home
+        label: Home page
+        type: file
+        path: index.html
+        format: code
+      - name: about
+        label: About page
+        type: file
+        path: pages/about.html
+        format: code
+      - name: contact
+        label: Contact page
+        type: file
+        path: pages/contact.html
+        format: code
+      - name: shop
+        label: Shop page
+        type: file
+        path: pages/shop.html
+        format: code
+      - name: working-on
+        label: Working on page
+        type: file
+        path: pages/working-on.html
+        format: code
+      - name: writings
+        label: Writings page
+        type: file
+        path: pages/writings.html
+        format: code
+      - name: writing-template
+        label: New writing template
+        type: file
+        path: pages/writing.html
+        format: code
+      - name: writing-place
+        label: Place article
+        type: file
+        path: pages/writing-place.html
+        format: code
+      - name: writing-elsewhere
+        label: Elsewhere article
+        type: file
+        path: pages/writing-somewhere-else.html
+        format: code
+      - name: writing-unfinished
+        label: Unfinished work article
+        type: file
+        path: pages/writing-unfinished.html
+        format: code
+      - name: privacy
+        label: Privacy page
+        type: file
+        path: pages/privacy.html
+        format: code
+      - name: terms
+        label: Terms page
+        type: file
+        path: pages/terms.html
+        format: code
+  - name: frontend-scripts
+    label: Site behavior
+    type: group
+    items:
+      - name: site-shell
+        label: Shared header and footer
+        type: file
+        path: scripts/site-shell.js
+        format: code
+      - name: asset-paths
+        label: Image paths
+        type: file
+        path: scripts/asset-paths.js
+        format: code
+      - name: board-labels
+        label: Board labels
+        type: file
+        path: scripts/board-labels.js
+        format: code
+      - name: working-assets
+        label: Working page images
+        type: file
+        path: scripts/working-assets.js
+        format: code
+      - name: posts-renderer
+        label: Writing display behavior
+        type: file
+        path: scripts/posts.js
+        format: code
+      - name: admin-footer
+        label: Admin footer link
+        type: file
+        path: scripts/admin-footer.js
+        format: code
+      - name: page-shell-wrapper
+        label: Page shell loader
+        type: file
+        path: pages/site-shell.js
+        format: code
+      - name: page-asset-wrapper
+        label: Page asset loader
+        type: file
+        path: pages/working-assets.js
+        format: code
+      - name: page-label-wrapper
+        label: Page label loader
+        type: file
+        path: pages/board-labels.js
+        format: code
+  - name: writing-posts
+    label: Writing posts
+    type: file
+    path: content/posts.json
+    format: json
+    fields:
+      - name: posts
+        label: Posts
+        type: object
+        list:
+          min: 1
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: slug
+            label: URL slug
+            type: string
+            required: true
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: category
+            label: Category
+            type: string
+          - name: date
+            label: Display date
+            type: string
+          - name: summary
+            label: Short introduction
+            type: text
+          - name: image
+            label: Image URL or /assets path
+            type: string
+          - name: imageAlt
+            label: Image description
+            type: string
+          - name: body
+            label: Article paragraphs (separate with a blank line)
+            type: text
+          - name: path
+            label: Existing article page (optional)
+            type: string
