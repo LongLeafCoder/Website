@@ -25,12 +25,11 @@
     {
       "slug": "unfinished-work",
       "title": "A better relationship with unfinished work",
-      "category": "Process",
-      "date": "04.11.26",
+      "category": "History",
+      "date": "2025",
       "summary": "Some projects need a deadline. Others need a little more time in the dark.",
       "image": "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1000&q=85",
       "imageAlt": "Open notebook with handwritten notes",
-      "body": "Unfinished work is not always a problem to solve. Sometimes it is evidence that the question is still alive.\n\nA board can sit on the bench while its final shape becomes clearer. A paragraph can wait for the sentence that gives it a reason to exist. The pause is part of the craft, even when it looks like nothing is happening.\n\nI am learning to leave room for that pause without mistaking it for failure.",
       "path": "pages/writing-unfinished.html"
     }
   ]
