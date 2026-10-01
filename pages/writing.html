@@ -9,42 +9,70 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet">
   <style>
-    :root { --night: #211b17; --clay: #a95835; --linen: #f3eee5; --muted: #6d6259; --max: 850px; }
+    :root {
+      --ink: #211b17;
+      --clay: #a95835;
+      --paper: #f3eee5;
+      --soft: #e6dacb;
+      --muted: #6d6259;
+      --line: rgba(33, 27, 23, .2);
+    }
     * { box-sizing: border-box; }
-    body { margin: 0; color: var(--night); background: var(--linen); font-family: 'DM Sans', sans-serif; }
-    .wrap { width: min(var(--max), calc(100% - 42px)); margin: auto; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: 'DM Sans', sans-serif; }
     a { color: inherit; text-decoration: none; }
-    .mono { font: 600 11px 'DM Sans', sans-serif; letter-spacing: 0; text-transform: uppercase; }
-    header { padding: 27px 0; border-bottom: 1px solid rgba(33,27,23,.2); }
-    .back { color: var(--clay); }
-    main { padding: 105px 0; }
+    .mono { font: 600 11px/1.4 'DM Sans', sans-serif; letter-spacing: 0; text-transform: uppercase; }
+    main { padding: 150px 0 120px; }
+    .wrap { width: min(1120px, calc(100% - 72px)); margin: auto; }
+    .back { display: inline-flex; min-height: 34px; align-items: center; gap: 10px; margin-bottom: 42px; color: var(--clay); }
+    .back::before { content: '\2190'; font-size: 16px; transition: transform .2s ease; }
+    .back:hover::before { transform: translateX(-4px); }
+    .story-header { max-width: 920px; padding-bottom: 34px; border-bottom: 1px solid var(--line); }
     .meta { color: var(--muted); }
-    h1 { max-width: 760px; margin: 20px 0 28px; font: 600 clamp(50px, 8vw, 84px)/.98 'Newsreader', serif; }
-    .writing-cover { display: flex; max-width: 650px; max-height: 440px; justify-content: center; margin: 0 auto 34px; overflow: hidden; }
+    h1 { max-width: 900px; margin: 19px 0 25px; font: 600 76px/.97 'Newsreader', serif; }
+    .summary { max-width: 760px; margin: 0; padding-left: 22px; border-left: 2px solid var(--clay); color: #514940; font: 500 24px/1.45 'Newsreader', serif; white-space: pre-line; }
+    .writing-cover { display: flex; max-width: 1040px; max-height: 600px; justify-content: center; align-items: center; margin: 38px auto 70px; overflow: hidden; border: 1px solid var(--line); background: var(--soft); }
     .writing-cover[hidden] { display: none; }
-    .writing-cover img { width: auto; max-width: 100%; max-height: 440px; object-fit: contain; }
-    article { max-width: 650px; margin: auto; }
-    article p { color: #514940; font-size: 17px; line-height: 1.8; }
-    article .summary { color: var(--night); font: 500 23px/1.45 'Newsreader', serif; }
-    .rule { margin: 55px 0; border: 0; border-top: 1px solid rgba(33,27,23,.2); }
-    footer { padding: 25px 0; color: #cfc5ba; background: #0f0d0c; font: 10px 'DM Mono', monospace; text-transform: uppercase; }
-    @media (max-width: 800px) { main { padding: 75px 0; } }
+    .writing-cover img { display: block; width: auto; max-width: 100%; max-height: 600px; object-fit: contain; }
+    .story-body { max-width: 720px; margin: 0 auto; }
+    .story-body p { margin: 0 0 1.45em; color: #514940; font-size: 18px; line-height: 1.85; }
+    .story-body p:last-child { margin-bottom: 0; }
+    @media (max-width: 800px) {
+      main { padding: 122px 0 85px; }
+      .wrap { width: calc(100% - 40px); }
+      .back { margin-bottom: 34px; }
+      .story-header { padding-bottom: 28px; }
+      h1 { max-width: 700px; font-size: 54px; }
+      .summary { font-size: 21px; }
+      .writing-cover { max-height: 480px; margin: 30px auto 54px; }
+      .writing-cover img { max-height: 480px; }
+      .story-body p { font-size: 17px; }
+    }
+    @media (max-width: 520px) {
+      main { padding: 112px 0 70px; }
+      .wrap { width: calc(100% - 36px); }
+      .back { margin-bottom: 28px; }
+      h1 { margin: 15px 0 20px; font-size: 43px; line-height: 1; }
+      .summary { padding-left: 15px; font-size: 19px; }
+      .writing-cover { margin: 24px auto 42px; }
+      .writing-cover img { max-height: 390px; }
+      .story-body p { font-size: 16px; line-height: 1.8; }
+    }
   </style>
   <script src="../scripts/posts.js" defer></script>
   <script src="../scripts/site-shell.js" defer></script>
 </head>
 <body>
-  <header><div class="wrap"><a class="back mono" href="writings.html">&larr; All writings</a></div></header>
+  <header></header>
   <main data-writing-detail>
-    <div class="wrap">
-      <div class="meta mono" data-writing-meta></div>
-      <h1 data-writing-title>Loading writing...</h1>
-      <figure class="writing-cover" data-writing-cover hidden><img data-writing-image alt=""></figure>
-      <article>
+    <div class="wrap story">
+      <a class="back mono" href="writings.html">All writings</a>
+      <div class="story-header">
+        <div class="meta mono" data-writing-meta></div>
+        <h1 data-writing-title>Loading writing...</h1>
         <p class="summary" data-writing-summary></p>
-        <hr class="rule">
-        <div data-writing-body></div>
-      </article>
+      </div>
+      <figure class="writing-cover" data-writing-cover hidden><img data-writing-image alt="" decoding="async"></figure>
+      <article class="story-body"><div data-writing-body></div></article>
     </div>
   </main>
   <footer><div class="wrap">&copy; 2026 Tarheel Maker</div></footer>

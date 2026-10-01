@@ -10,7 +10,23 @@ document.addEventListener('DOMContentLoaded', async () => {
   const homeGrid = document.querySelector('.journal-grid');
   const writingsGrid = document.querySelector('.posts');
 
+  const postTimestamp = post => {
+    const value = String(post.date || '').trim();
+    const monthFirst = value.match(/^(\d{1,2})[./-](\d{1,2})[./-](\d{2,4})$/);
+    if (monthFirst) {
+      const month = Number(monthFirst[1]);
+      const day = Number(monthFirst[2]);
+      const shortYear = Number(monthFirst[3]);
+      const year = shortYear < 100 ? shortYear + (shortYear < 70 ? 2000 : 1900) : shortYear;
+      return Date.UTC(year, month - 1, day);
+    }
+
+    const timestamp = Date.parse(value);
+    return Number.isNaN(timestamp) ? 0 : timestamp;
+  };
+
   const postUrl = post => `${root}pages/writing.html?slug=${encodeURIComponent(post.slug)}`;
+  const articleHref = post => (post && post.path) ? `${root}${post.path}` : postUrl(post);
 
   const createCard = (post, compact) => {
     const article = document.createElement('article');
@@ -18,14 +34,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const imageLink = document.createElement('a');
     imageLink.className = 'post-image';
-    imageLink.href = postUrl(post);
+    imageLink.href = articleHref(post);
     imageLink.style.display = 'block';
 
     if (post.image) {
       const image = document.createElement('img');
+      const positionPortrait = () => {
+        if (image.naturalHeight > image.naturalWidth) image.style.objectPosition = 'center top';
+      };
+      image.addEventListener('load', positionPortrait, { once: true });
       image.src = post.image;
       image.alt = post.imageAlt || '';
       image.loading = 'lazy';
+      if (image.complete) positionPortrait();
       imageLink.append(image);
     }
     article.append(imageLink);
@@ -49,14 +70,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const link = document.createElement('a');
     link.className = compact ? 'post-link' : 'read';
-    link.href = postUrl(post);
-    link.textContent = 'Read note ↗';
+    link.href = articleHref(post);
+    link.textContent = 'Read more ↗';
     article.append(link);
     return article;
   };
 
   if (homeGrid) {
-    homeGrid.replaceChildren(...posts.slice(0, 3).map(post => createCard(post, true)));
+    const latestPosts = [...posts].sort((first, second) => postTimestamp(second) - postTimestamp(first));
+    homeGrid.replaceChildren(...latestPosts.slice(0, 3).map(post => createCard(post, true)));
   }
   if (writingsGrid) {
     writingsGrid.replaceChildren(...posts.map(post => createCard(post, false)));

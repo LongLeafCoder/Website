@@ -97,7 +97,7 @@
     .journal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .post { min-width: 0; }
     .post-image { aspect-ratio: 1.15; overflow: hidden; background: #b4b09f; }
-    .post-image img { height: 100%; object-fit: cover; transition: transform .5s; }
+    .post-image img { height: 100%; object-fit: cover; object-position: center center; transition: transform .5s; }
     .post:hover .post-image img { transform: scale(1.045); }
     .post-meta { display: flex; justify-content: space-between; gap: 15px; padding-top: 17px; color: var(--muted); }
     .post h3 { margin: 13px 0 0; max-width: 340px; font: 600 31px/1.04 var(--display-font); letter-spacing: 0; }
@@ -166,6 +166,7 @@
     document.querySelectorAll('.journal .post').forEach((post, index) => {
       post.querySelector('.post-image').href = writingLinks[index];
       post.querySelector('.post-link').href = writingLinks[index];
+      post.querySelector('.post-link').textContent = 'Read more ↗';
     });
     const flagCard = [...document.querySelectorAll('.side-project')].find(card => card.querySelector('img[src*="Tabbaco"]'));
     if (flagCard) {
