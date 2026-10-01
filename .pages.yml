@@ -159,6 +159,3 @@ content:
           - name: body
             label: Article paragraphs (separate with a blank line)
             type: text
-          - name: path
-            label: Existing article page (optional)
-            type: string

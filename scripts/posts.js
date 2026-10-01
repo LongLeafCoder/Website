@@ -10,10 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const homeGrid = document.querySelector('.journal-grid');
   const writingsGrid = document.querySelector('.posts');
 
-  const postUrl = post => {
-    if (post.path) return `${root}${post.path}`;
-    return `${root}pages/writing.html?slug=${encodeURIComponent(post.slug)}`;
-  };
+  const postUrl = post => `${root}pages/writing.html?slug=${encodeURIComponent(post.slug)}`;
 
   const createCard = (post, compact) => {
     const article = document.createElement('article');
@@ -77,6 +74,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.querySelector('[data-writing-meta]').textContent = `${post.category || 'Writing'} / ${post.date || ''}`;
   document.querySelector('[data-writing-title]').textContent = post.title;
   document.querySelector('[data-writing-summary]').textContent = post.summary || '';
+  const cover = document.querySelector('[data-writing-cover]');
+  const coverImage = document.querySelector('[data-writing-image]');
+  if (post.image && cover && coverImage) {
+    coverImage.src = post.image;
+    coverImage.alt = post.imageAlt || '';
+    cover.hidden = false;
+  }
   const body = document.querySelector('[data-writing-body]');
   const paragraphs = String(post.body || '').split(/\n\s*\n/).filter(paragraph => paragraph.trim());
   body.replaceChildren(...paragraphs.map(text => {

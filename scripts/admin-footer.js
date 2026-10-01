@@ -1,5 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const target = document.querySelector('footer .footer-bottom, footer .footer-row, footer .wrap');
+  const footer = document.querySelector('footer');
+  if (!footer) return;
+
+  const elsewhere = [...footer.querySelectorAll('.footer-column')].find(column =>
+    column.querySelector('h3')?.textContent.trim().toLowerCase() === 'elsewhere'
+  );
+  const footerTarget = elsewhere || footer.querySelector('.footer-bottom, .footer-row, .wrap');
+  if (footerTarget && !footer.querySelector('a[href="https://pin.it/8JbKgV1SU"]')) {
+    const pinterestLink = document.createElement('a');
+    pinterestLink.href = 'https://pin.it/8JbKgV1SU';
+    pinterestLink.target = '_blank';
+    pinterestLink.rel = 'noopener noreferrer';
+    pinterestLink.textContent = 'Pinterest';
+    footerTarget.append(pinterestLink);
+  }
+
+  const target = footer.querySelector('.footer-bottom, .footer-row, .wrap');
   if (!target || target.querySelector('.admin-login-link')) return;
 
   const link = document.createElement('a');
