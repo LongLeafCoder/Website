@@ -1,5 +1,12 @@
 (() => {
   const renderShell = () => {
+    if (!document.getElementById('site-effects-script')) {
+      const effectsScript = document.createElement('script');
+      effectsScript.id = 'site-effects-script';
+      effectsScript.src = '/scripts/site-effects.js';
+      document.head.append(effectsScript);
+    }
+
     if (!document.querySelector('link[href*="family=Newsreader"]')) {
       const fontLink = document.createElement('link');
       fontLink.rel = 'stylesheet';
@@ -11,7 +18,7 @@
     const footer = document.querySelector('footer');
     if (header) {
       header.id = 'site-header';
-      header.innerHTML = '<div class="wrap nav"><a class="mark" href="/index.html">Tarheel Maker</a><nav aria-label="Main navigation"><a href="/pages/working-on.html">Working on</a><a href="/pages/about.html">About</a><a href="/pages/writings.html">Writings</a></nav><button class="menu" id="menu" type="button" aria-label="Open menu" aria-expanded="false">=</button></div>';
+      header.innerHTML = '<div class="wrap nav"><a class="mark" href="/index.html">Tarheel Maker</a><nav aria-label="Main navigation"><a href="/pages/working-on.html">Working on</a><a href="/pages/about.html">About</a><a href="/pages/writings.html">Writings</a><a href="/pages/contact.html">Contact</a></nav><button class="menu" id="menu" type="button" aria-label="Open menu" aria-expanded="false">=</button></div>';
       const menu = header.querySelector('.menu');
       menu.addEventListener('click', () => {
         const open = header.classList.toggle('open');
@@ -27,7 +34,7 @@
 
     if (footer) {
       footer.id = 'site-footer';
-      footer.innerHTML = '<div class="wrap"><div class="footer-main"><div class="footer-brand"><strong>Tarheel Maker</strong><p>Wood-burned art, heritage woodworking, and thoughtful digital work.</p><p>Made in North Carolina.</p></div><div class="footer-column"><h3>Explore</h3><a href="/pages/working-on.html">What I’m working on</a><a href="/pages/about.html">About</a><a href="/pages/writings.html">Writings</a></div><div class="footer-column"><h3>Elsewhere</h3><a href="https://pin.it/8JbKgV1SU" target="_blank" rel="noopener noreferrer">Pinterest</a><a href="https://oldsouthwoodworks.com" target="_blank" rel="noopener noreferrer">Old South Woodworks</a></div></div><div class="footer-bottom"><span>© 2026 Tarheel Maker</span><span>Made with attention / North Carolina</span><a class="admin-login-link" href="https://app.pagescms.org" target="_blank" rel="noopener noreferrer">Admin login</a></div></div>';
+      footer.innerHTML = '<div class="wrap"><div class="footer-main"><div class="footer-brand"><strong>Tarheel Maker</strong><p>Wood-burned art, heritage woodworking, and thoughtful digital work.</p><p>Made in North Carolina.</p></div><div class="footer-column"><h3>Explore</h3><a href="/pages/working-on.html">What I’m working on</a><a href="/pages/about.html">About</a><a href="/pages/writings.html">Writings</a><a href="/pages/contact.html">Contact</a></div><div class="footer-column"><h3>Elsewhere</h3><a href="https://pin.it/8JbKgV1SU" target="_blank" rel="noopener noreferrer">Pinterest</a><a href="https://oldsouthwoodworks.com" target="_blank" rel="noopener noreferrer">Old South Woodworks</a></div></div><div class="footer-bottom"><span>© 2026 Tarheel Maker</span><span>Made with attention / North Carolina</span><a class="admin-login-link" href="https://app.pagescms.org" target="_blank" rel="noopener noreferrer">Admin login</a></div></div>';
     }
 
     if (!document.getElementById('shared-site-shell-styles')) {
@@ -40,7 +47,7 @@
         #site-header .mark { display: flex; align-items: center; color: inherit; font: 600 19px/1 'Newsreader', serif; letter-spacing: 0; text-decoration: none; }
         #site-header nav { display: flex; gap: 31px; font: 600 11px 'DM Sans', sans-serif; letter-spacing: 0; text-transform: uppercase; }
         #site-header nav a { display: inline-flex; align-items: center; min-height: 34px; padding: 0 10px; border: 1px solid transparent; color: inherit; text-decoration: none; opacity: .88; transition: background .2s, border-color .2s, color .2s; }
-        #site-header nav a:hover { border-color: rgba(243,238,229,.45); color: #efc8a5; opacity: 1; }
+        #site-header nav a:hover { border-color: transparent; color: #efc8a5; opacity: 1; }
         #site-header .menu { display: none; width: 42px; height: 42px; border: 0; color: inherit; background: transparent; font: 600 22px 'DM Sans', sans-serif; cursor: pointer; }
         #site-footer { padding: 54px 0 20px; color: #e1d5c8; background: #302720; font: 400 16px/1.5 'DM Sans', sans-serif; letter-spacing: 0; text-transform: none; }
         #site-footer .footer-main { display: grid; grid-template-columns: minmax(230px,1.6fr) repeat(2,minmax(0,1fr)); gap: 40px; padding-bottom: 38px; }

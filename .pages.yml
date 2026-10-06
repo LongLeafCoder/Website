@@ -88,35 +88,10 @@ content:
         type: file
         path: scripts/board-labels.js
         format: code
-      - name: working-assets
-        label: Working page images
-        type: file
-        path: scripts/working-assets.js
-        format: code
       - name: posts-renderer
         label: Writing display behavior
         type: file
         path: scripts/posts.js
-        format: code
-      - name: admin-footer
-        label: Admin footer link
-        type: file
-        path: scripts/admin-footer.js
-        format: code
-      - name: page-shell-wrapper
-        label: Page shell loader
-        type: file
-        path: pages/site-shell.js
-        format: code
-      - name: page-asset-wrapper
-        label: Page asset loader
-        type: file
-        path: pages/working-assets.js
-        format: code
-      - name: page-label-wrapper
-        label: Page label loader
-        type: file
-        path: pages/board-labels.js
         format: code
   - name: writing-posts
     label: Writing posts

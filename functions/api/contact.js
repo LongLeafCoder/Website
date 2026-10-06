@@ -1,0 +1,1 @@
+export { onRequestGet, onRequestPost } from "../../functions_api/contact.js";

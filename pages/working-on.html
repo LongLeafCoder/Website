@@ -1,31 +1,539 @@
 <!doctype html>
-<script src="working-assets.js" defer></script>
 <script src="../scripts/site-shell.js" defer></script>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>What I’m Working On | Tarheel Maker</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--ink:#211b17;--clay:#a95835;--sun:#efc8a8;--paper:#f3eee5;--soft:#ddd0bf;--muted:#6d6259;--max:1240px}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font-family:Manrope,sans-serif}a{color:inherit;text-decoration:none}img{display:block;width:100%}.wrap{width:min(var(--max),calc(100% - 72px));margin:auto}.mono{font:500 11px 'DM Mono',monospace;letter-spacing:.12em;text-transform:uppercase}header{position:fixed;z-index:10;top:0;width:100%;color:var(--paper);background:rgba(33,27,23,.97);border-bottom:1px solid rgba(243,238,229,.2)}.nav{display:flex;align-items:center;justify-content:space-between;min-height:94px}.mark{font:800 18px Manrope,sans-serif;letter-spacing:-.05em}nav{display:flex;gap:10px;font:11px 'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase}nav a{padding:9px 10px;border:1px solid transparent}nav a:hover{border-color:rgba(243,238,229,.45);color:var(--sun)}.menu{display:none;border:0;color:inherit;background:none;font:22px 'DM Mono',monospace}main{padding:172px 0 120px}.head{display:flex;align-items:end;justify-content:space-between;gap:40px;margin-bottom:55px}.head h1{margin:18px 0 0;font-size:clamp(55px,8vw,108px);line-height:.86;letter-spacing:-.08em}.head p{max-width:330px;color:var(--muted);line-height:1.65}.feature{display:grid;grid-template-columns:1.12fr .88fr;gap:22px;margin-bottom:22px}.feature img{height:430px;object-fit:cover}.feature-copy{padding:38px;color:var(--paper);background:var(--ink)}.feature-copy h2{margin:16px 0 22px;font-size:clamp(34px,4vw,58px);line-height:.92}.feature-copy p{color:#d8d0c5;line-height:1.7}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{overflow:hidden;background:var(--soft)}.card img{height:275px;object-fit:cover}.card-copy{padding:21px}.card-copy .mono{color:var(--clay)}.card h2{margin:11px 0 8px;font-size:23px;line-height:1}.card p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}footer{padding:62px 0 21px;color:#cfc5ba;background:#0f0d0c}.footer-main{display:grid;grid-template-columns:1.7fr repeat(3,1fr);gap:34px;padding-bottom:48px}.footer-brand{max-width:260px}.footer-brand strong{display:block;margin-bottom:13px;color:var(--paper);font-size:18px}.footer-brand p{margin:0 0 12px;font-size:13px}.footer-column h3{margin:4px 0 18px;color:#c98a66;font:500 11px 'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase}.footer-column a{display:inline-flex;margin:0 5px 9px 0;padding:8px 9px;border:1px solid transparent;font-size:13px}.footer-column a:hover{border-color:rgba(243,238,229,.35);color:var(--paper);background:rgba(169,88,53,.24)}.footer-bottom{display:flex;justify-content:space-between;border-top:1px solid rgba(243,238,229,.2);padding-top:19px;color:#998f85;font:10px 'DM Mono',monospace;text-transform:uppercase}.footer-bottom span:first-child{color:var(--paper)}@media(max-width:800px){.wrap{width:calc(100% - 36px)}.nav{min-height:78px}nav{display:none}.menu{display:block}header.open nav{position:absolute;top:78px;left:0;right:0;display:flex;flex-direction:column;padding:23px 18px 28px;background:var(--ink)}main{padding:130px 0 80px}.head{display:block}.head p{margin-top:22px}.feature{grid-template-columns:1fr}.feature img{height:280px}.gallery{grid-template-columns:1fr 1fr;gap:14px}.card img{height:210px}.footer-main{grid-template-columns:1fr 1fr;gap:32px 24px}.footer-brand{grid-column:1/-1}.footer-bottom{display:block;line-height:2}}
-	.company-partnership{display:grid;grid-template-columns:minmax(190px,.55fr) minmax(0,1.45fr);gap:clamp(28px,6vw,76px);align-items:center;margin:84px 0 72px;padding:38px;background:var(--soft)}
-	.company-logo{display:grid;place-items:center;min-height:220px;padding:20px;background:#fff}
-	.company-logo img{width:min(100%,240px);height:auto;object-fit:contain}
-	.company-copy{max-width:650px}
-	.company-copy h2{margin:12px 0 16px;font:600 clamp(34px,4vw,54px)/1.05 Newsreader,serif}
-	.company-copy p{max-width:580px;color:var(--muted);font-size:15px;line-height:1.7}
-	.company-link{display:inline-flex;align-items:center;gap:10px;margin-top:10px;padding-bottom:4px;border-bottom:1px solid var(--clay);color:var(--ink);font-size:14px;font-weight:600}
-	.company-link:hover{color:var(--clay)}
-	@media(max-width:800px){.company-partnership{grid-template-columns:1fr;gap:28px;margin:60px 0 48px;padding:28px}.company-logo{min-height:180px}.company-logo img{width:min(100%,210px)}}
-</style>
-</head>
-<body>
-<header id="site-header"><div class="wrap nav"><a class="mark" href="index.html">Tarheel Maker</a><nav><a href="working-on.html">Working on</a><a href="about.html">About</a><a href="writings.html">Writings</a><a href="contact.html">Contact</a></nav><button class="menu" id="menu" type="button">=</button></div></header>
-<main><div class="wrap"><div class="head"><div><div class="mono">01 / What I’m working on</div><h1>Crafted with<br>intention.</h1></div><p>A focused collection of wood-burned art, custom cutting boards, and North Carolina pieces made with care.</p></div>
-<section class="company-partnership" aria-labelledby="old-south-title"><div class="company-logo"><img src="../assets/wood%20working/old_south_woodworks_logo.png" alt="Old South Woodworks logo"></div><div class="company-copy"><div class="mono">01 / A company I co-own</div><h2 id="old-south-title">Old South Woodworks</h2><p>Old South Woodworks creates handcrafted cutting boards, woodburned art, turned products, and decorative pieces from quality hardwoods.</p><p>I create all of the wood-burned art for the company.</p><a class="company-link" href="https://oldsouthwoodworks.com" target="_blank" rel="noopener noreferrer">Visit Old South Woodworks <span aria-hidden="true">↗</span></a></div></section>
-<section class="feature"><img src="wood working/20260501_170708.jpg" alt="Wood-burned mountain landscape artwork"><div class="feature-copy"><div class="mono" style="color:var(--sun)">02 / My woodworking</div><h2>Mountain<br>landscape</h2><p>A detailed mountain scene burned directly into the wood, with the natural grain left visible.</p></div></section>
-<section class="gallery"><article class="card"><img src="wood working/Pig CB.jpeg" alt="Pig-shaped cutting board"><div class="card-copy"><div class="mono">Cutting board</div><h2>Pig-shaped cutting board</h2><p>A playful board for the kitchen.</p></div></article><article class="card"><img src="wood working/Pig CB2.jpg" alt="Pig-shaped cutting board with burned pork cuts"><div class="card-copy"><div class="mono">Cutting board</div><h2>Pig-shaped cutting board</h2><p>A shaped board with burned detail.</p></div></article><article class="card"><img src="wood working/Tabbaco Stick Flag.jpeg" alt="Tobacco stick flag made from reclaimed North Carolina tobacco sticks"><div class="card-copy"><div class="mono">Decorative work</div><h2>Tobacco stick flag</h2><p>Made from reclaimed North Carolina tobacco sticks.</p></div></article><article class="card"><img src="wood working/first_in_freedom.jpeg" alt="North Carolina shaped cutting board"><div class="card-copy"><div class="mono">Cutting board</div><h2>North Carolina cutting board</h2><p>A regional piece with local character.</p></div></article><article class="card"><img src="wood working/Resized_20260203_164604.jpeg" alt="Pig-shaped cutting board showing pork cuts"><div class="card-copy"><div class="mono">Cutting board</div><h2>Pig-shaped cutting board</h2><p>An illustrated kitchen reference.</p></div></article><article class="card"><img src="wood working/NC light house.jpg" alt="North Carolina lighthouse cutting board"><div class="card-copy"><div class="mono">Cutting board</div><h2>North Carolina lighthouse cutting board</h2><p>A familiar landmark in wood.</p></div></article></section>
-</div></main>
-<footer><div class="wrap"><div class="footer-main"><div class="footer-brand"><strong>Tarheel Maker</strong><p>Wood-burned art, heritage woodworking, and thoughtful digital work.</p><p>Made in North Carolina.</p></div><div class="footer-column"><h3>Explore</h3><a href="working-on.html">Working on</a><a href="about.html">About</a><a href="writings.html">Writings</a></div><div class="footer-column"><h3>Connect</h3><a href="contact.html">Contact</a><a href="mailto:hello@alexmorgan.studio">Email</a></div><div class="footer-column"><h3>Elsewhere</h3><a href="https://www.instagram.com/">Instagram</a><a href="https://github.com/">GitHub</a></div></div><div class="footer-bottom"><span>© 2026 Tarheel Maker</span><span>Made with attention / North Carolina</span></div></div></footer>
-<script>const header=document.getElementById('site-header');document.getElementById('menu').addEventListener('click',()=>header.classList.toggle('open'));</script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>What I’m Working On | Tarheel Maker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #211b17;
+        --clay: #a95835;
+        --sun: #efc8a8;
+        --paper: #f3eee5;
+        --soft: #ddd0bf;
+        --muted: #6d6259;
+        --max: 1240px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font-family: Manrope, sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        display: block;
+        width: 100%;
+      }
+      .wrap {
+        width: min(var(--max), calc(100% - 72px));
+        margin: auto;
+      }
+      .mono {
+        font:
+          500 11px "DM Mono",
+          monospace;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      header {
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        width: 100%;
+        color: var(--paper);
+        background: rgba(33, 27, 23, 0.97);
+        border-bottom: 1px solid rgba(243, 238, 229, 0.2);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 94px;
+      }
+      .mark {
+        font:
+          800 18px Manrope,
+          sans-serif;
+        letter-spacing: -0.05em;
+      }
+      nav {
+        display: flex;
+        gap: 10px;
+        font:
+          11px "DM Mono",
+          monospace;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      nav a {
+        padding: 9px 10px;
+        border: 1px solid transparent;
+      }
+      nav a:hover {
+        border-color: rgba(243, 238, 229, 0.45);
+        color: var(--sun);
+      }
+      .menu {
+        display: none;
+        border: 0;
+        color: inherit;
+        background: none;
+        font:
+          22px "DM Mono",
+          monospace;
+      }
+      main {
+        padding: 172px 0 120px;
+      }
+      .head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 40px;
+        margin-bottom: 55px;
+      }
+      .head h1 {
+        margin: 18px 0 0;
+        font-size: clamp(55px, 8vw, 108px);
+        line-height: 0.86;
+        letter-spacing: -0.08em;
+      }
+      .head p {
+        max-width: 330px;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+      .feature {
+        display: grid;
+        grid-template-columns: 1.12fr 0.88fr;
+        gap: 22px;
+        margin-bottom: 22px;
+      }
+      .feature img {
+        height: 430px;
+        object-fit: cover;
+      }
+      .feature-copy {
+        padding: 38px;
+        color: var(--paper);
+        background: var(--ink);
+      }
+      .feature-copy h2 {
+        margin: 16px 0 22px;
+        font-size: clamp(34px, 4vw, 58px);
+        line-height: 0.92;
+      }
+      .feature-copy p {
+        color: #d8d0c5;
+        line-height: 1.7;
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+      .card {
+        overflow: hidden;
+        background: var(--soft);
+      }
+      .card img {
+        height: 275px;
+        object-fit: cover;
+      }
+      .card-copy {
+        padding: 21px;
+      }
+      .card-copy .mono {
+        color: var(--clay);
+      }
+      .card h2 {
+        margin: 11px 0 8px;
+        font-size: 23px;
+        line-height: 1;
+      }
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.5;
+      }
+      footer {
+        padding: 62px 0 21px;
+        color: #cfc5ba;
+        background: #0f0d0c;
+      }
+      .footer-main {
+        display: grid;
+        grid-template-columns: 1.7fr repeat(3, 1fr);
+        gap: 34px;
+        padding-bottom: 48px;
+      }
+      .footer-brand {
+        max-width: 260px;
+      }
+      .footer-brand strong {
+        display: block;
+        margin-bottom: 13px;
+        color: var(--paper);
+        font-size: 18px;
+      }
+      .footer-brand p {
+        margin: 0 0 12px;
+        font-size: 13px;
+      }
+      .footer-column h3 {
+        margin: 4px 0 18px;
+        color: #c98a66;
+        font:
+          500 11px "DM Mono",
+          monospace;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .footer-column a {
+        display: inline-flex;
+        margin: 0 5px 9px 0;
+        padding: 8px 9px;
+        border: 1px solid transparent;
+        font-size: 13px;
+      }
+      .footer-column a:hover {
+        border-color: rgba(243, 238, 229, 0.35);
+        color: var(--paper);
+        background: rgba(169, 88, 53, 0.24);
+      }
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid rgba(243, 238, 229, 0.2);
+        padding-top: 19px;
+        color: #998f85;
+        font:
+          10px "DM Mono",
+          monospace;
+        text-transform: uppercase;
+      }
+      .footer-bottom span:first-child {
+        color: var(--paper);
+      }
+      @media (max-width: 800px) {
+        .wrap {
+          width: calc(100% - 36px);
+        }
+        .nav {
+          min-height: 78px;
+        }
+        nav {
+          display: none;
+        }
+        .menu {
+          display: block;
+        }
+        header.open nav {
+          position: absolute;
+          top: 78px;
+          left: 0;
+          right: 0;
+          display: flex;
+          flex-direction: column;
+          padding: 23px 18px 28px;
+          background: var(--ink);
+        }
+        main {
+          padding: 130px 0 80px;
+        }
+        .head {
+          display: block;
+        }
+        .head p {
+          margin-top: 22px;
+        }
+        .feature {
+          grid-template-columns: 1fr;
+        }
+        .feature img {
+          height: 280px;
+        }
+        .gallery {
+          grid-template-columns: 1fr 1fr;
+          gap: 14px;
+        }
+        .card img {
+          height: 210px;
+        }
+        .footer-main {
+          grid-template-columns: 1fr 1fr;
+          gap: 32px 24px;
+        }
+        .footer-brand {
+          grid-column: 1/-1;
+        }
+        .footer-bottom {
+          display: block;
+          line-height: 2;
+        }
+      }
+      .company-partnership {
+        display: grid;
+        grid-template-columns: minmax(190px, 0.55fr) minmax(0, 1.45fr);
+        gap: clamp(28px, 6vw, 76px);
+        align-items: center;
+        margin: 84px 0 72px;
+        padding: 38px;
+        background: var(--soft);
+      }
+      .company-logo {
+        display: grid;
+        place-items: center;
+        min-height: 220px;
+        padding: 20px;
+        background: #fff;
+      }
+      .company-logo img {
+        width: min(100%, 240px);
+        height: auto;
+        object-fit: contain;
+      }
+      .company-copy {
+        max-width: 650px;
+      }
+      .company-copy h2 {
+        margin: 12px 0 16px;
+        font:
+          600 clamp(34px, 4vw, 54px)/1.05 Newsreader,
+          serif;
+      }
+      .company-copy p {
+        max-width: 580px;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.7;
+      }
+      .company-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+        padding-bottom: 4px;
+        border-bottom: 1px solid var(--clay);
+        color: var(--ink);
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .company-link:hover {
+        color: var(--clay);
+      }
+      @media (max-width: 800px) {
+        .company-partnership {
+          grid-template-columns: 1fr;
+          gap: 28px;
+          margin: 60px 0 48px;
+          padding: 28px;
+        }
+        .company-logo {
+          min-height: 180px;
+        }
+        .company-logo img {
+          width: min(100%, 210px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header id="site-header">
+      <div class="wrap nav">
+        <a class="mark" href="index.html">Tarheel Maker</a>
+        <nav>
+          <a href="working-on.html">Working on</a><a href="about.html">About</a
+          ><a href="writings.html">Writings</a
+          ><a href="contact.html">Contact</a>
+        </nav>
+        <button class="menu" id="menu" type="button">=</button>
+      </div>
+    </header>
+    <main>
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <div class="mono">01 / What I’m working on</div>
+            <h1>Crafted with<br />intention.</h1>
+          </div>
+          <p>
+            A focused collection of wood-burned art, custom cutting boards, and
+            North Carolina pieces made with care.
+          </p>
+        </div>
+        <section class="company-partnership" aria-labelledby="old-south-title">
+          <div class="company-logo">
+            <img
+              src="../assets/wood%20working/old_south_woodworks_logo.png"
+              alt="Old South Woodworks logo"
+            />
+          </div>
+          <div class="company-copy">
+            <div class="mono">01 / A company I co-own</div>
+            <h2 id="old-south-title">Old South Woodworks</h2>
+            <p>
+              Old South Woodworks creates handcrafted cutting boards, woodburned
+              art, turned products, and decorative pieces from quality
+              hardwoods.
+            </p>
+            <p>I create all of the wood-burned art for the company.</p>
+            <a
+              class="company-link"
+              href="https://oldsouthwoodworks.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Visit Old South Woodworks <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </section>
+        <section class="feature">
+          <img
+            src="../assets/wood%20working/20260501_170708.webp"
+            alt="Wood-burned mountain landscape artwork"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="feature-copy">
+            <div class="mono" style="color: var(--sun)">
+              02 / My woodworking
+            </div>
+            <h2>Mountain<br />landscape</h2>
+            <p>
+              A detailed mountain scene burned directly into the wood, with the
+              natural grain left visible.
+            </p>
+          </div>
+        </section>
+        <section class="gallery">
+          <article class="card">
+            <img
+              src="../assets/wood%20working/Pig%20CB.jpeg"
+              alt="Pig-shaped cutting board"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="card-copy">
+              <div class="mono">Cutting board</div>
+              <h2>Pig-shaped cutting board</h2>
+              <p>A playful board for the kitchen.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img
+              src="../assets/wood%20working/Pig%20CB2.webp"
+              alt="Pig-shaped cutting board with burned pork cuts"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="card-copy">
+              <div class="mono">Cutting board</div>
+              <h2>Pig-shaped cutting board</h2>
+              <p>A shaped board with burned detail.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img
+              src="../assets/wood%20working/Tabbaco%20Stick%20Flag.jpeg"
+              alt="Tobacco stick flag made from reclaimed North Carolina tobacco sticks"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="card-copy">
+              <div class="mono">Decorative work</div>
+              <h2>Tobacco stick flag</h2>
+              <p>Made from reclaimed North Carolina tobacco sticks.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img
+              src="../assets/wood%20working/first_in_freedom.webp"
+              alt="North Carolina shaped cutting board"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="card-copy">
+              <div class="mono">Cutting board</div>
+              <h2>North Carolina cutting board</h2>
+              <p>A regional piece with local character.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img
+              src="../assets/wood%20working/Resized_20260203_164604.webp"
+              alt="Pig-shaped cutting board showing pork cuts"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="card-copy">
+              <div class="mono">Cutting board</div>
+              <h2>Pig-shaped cutting board</h2>
+              <p>An illustrated kitchen reference.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img
+              src="../assets/wood%20working/NC%20light%20house.webp"
+              alt="North Carolina lighthouse cutting board"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="card-copy">
+              <div class="mono">Cutting board</div>
+              <h2>North Carolina lighthouse cutting board</h2>
+              <p>A familiar landmark in wood.</p>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <div class="wrap">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <strong>Tarheel Maker</strong>
+            <p>
+              Wood-burned art, heritage woodworking, and thoughtful digital
+              work.
+            </p>
+            <p>Made in North Carolina.</p>
+          </div>
+          <div class="footer-column">
+            <h3>Explore</h3>
+            <a href="working-on.html">Working on</a
+            ><a href="about.html">About</a><a href="writings.html">Writings</a>
+          </div>
+          <div class="footer-column">
+            <h3>Connect</h3>
+            <a href="contact.html">Contact</a
+            ><a href="mailto:hello@alexmorgan.studio">Email</a>
+          </div>
+          <div class="footer-column">
+            <h3>Elsewhere</h3>
+            <a href="https://www.instagram.com/">Instagram</a
+            ><a href="https://github.com/">GitHub</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Tarheel Maker</span
+          ><span>Made with attention / North Carolina</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
