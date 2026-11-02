@@ -116,7 +116,7 @@ content:
             label: Category
             type: string
           - name: dateAdded
-            label: Date added (YYYY-MM-DD)
+            label: Date added (year or YYYY-MM-DD)
             type: string
           - name: image
             label: Project photo

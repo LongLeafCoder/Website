@@ -116,12 +116,14 @@
   };
 
   const projectDate = (project) => {
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(project.dateAdded || "")) return null;
+    const date = project.dateAdded || "";
+    if (/^\d{4}$/.test(date)) return Date.UTC(Number(date), 0, 1);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return null;
 
-    const timestamp = Date.parse(`${project.dateAdded}T00:00:00Z`);
+    const timestamp = Date.parse(`${date}T00:00:00Z`);
     if (
       !Number.isFinite(timestamp) ||
-      new Date(timestamp).toISOString().slice(0, 10) !== project.dateAdded
+      new Date(timestamp).toISOString().slice(0, 10) !== date
     ) {
       return null;
     }
