@@ -3,44 +3,51 @@
     {
       "title": "Pig-shaped cutting board",
       "category": "Cutting board",
-      "image": "/assets/wood%20working/Pig%20CB.jpeg",
+      "image": "/assets/wood working/Pig CB.jpeg",
       "imageAlt": "Pig-shaped wooden cutting board",
       "description": "A playful board made for the kitchen."
     },
     {
       "title": "Pork cuts board",
       "category": "Cutting board",
-      "image": "/assets/wood%20working/Pig%20CB2.webp",
+      "image": "/assets/wood working/Pig CB2.webp",
       "imageAlt": "Pig-shaped cutting board with pork cuts burned into the surface",
       "description": "A shaped board with burned-in butcher-cut details."
     },
     {
       "title": "Tobacco stick flag",
       "category": "Decorative work",
-      "image": "/assets/wood%20working/Tabbaco%20Stick%20Flag.jpeg",
+      "image": "/assets/wood working/Tabbaco Stick Flag.jpeg",
       "imageAlt": "American flag made from reclaimed North Carolina tobacco sticks",
       "description": "Made from reclaimed North Carolina tobacco sticks."
     },
     {
       "title": "North Carolina cutting board",
       "category": "Cutting board",
-      "image": "/assets/wood%20working/first_in_freedom.webp",
+      "image": "/assets/wood working/first_in_freedom.webp",
       "imageAlt": "Cutting board shaped like North Carolina",
       "description": "A regional piece with local character."
     },
     {
       "title": "Pork cuts reference board",
       "category": "Cutting board",
-      "image": "/assets/wood%20working/Resized_20260203_164604.webp",
+      "image": "/assets/wood working/Resized_20260203_164604.webp",
       "imageAlt": "Pig-shaped cutting board showing pork cuts",
       "description": "An illustrated kitchen reference burned into wood."
     },
     {
       "title": "North Carolina lighthouse board",
       "category": "Cutting board",
-      "image": "/assets/wood%20working/NC%20light%20house.webp",
+      "image": "/assets/wood working/NC light house.webp",
       "imageAlt": "North Carolina lighthouse illustrated on a cutting board",
       "description": "A familiar coastal landmark made in wood."
+    },
+    {
+      "title": "Frauenkirche, Dresden",
+      "category": "Wood Burned Art",
+      "image": "/assets/uploads/Wood Working/franenkirche dresden 1.jpg",
+      "imageAlt": "A beautiful wood-burned picture of Frauenkirche, Dresden.",
+      "description": "A beautiful wood-burned picture of Frauenkirche, Dresden."
     }
   ]
 }
