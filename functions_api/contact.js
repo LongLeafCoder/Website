@@ -21,7 +21,7 @@ const hasConfiguration = (env) =>
     env.CONTACT_EMAIL_TO,
   );
 
-export async function onRequestGet({ env }) {
+async function onRequestGet(env) {
   if (!hasConfiguration(env)) {
     return json({ error: "The contact form is not configured." }, 503);
   }
@@ -29,7 +29,7 @@ export async function onRequestGet({ env }) {
   return json({ siteKey: env.TURNSTILE_SITE_KEY });
 }
 
-export async function onRequestPost({ request, env }) {
+async function onRequestPost(request, env) {
   if (!hasConfiguration(env)) {
     return json({ error: "The contact form is not configured." }, 503);
   }
@@ -147,3 +147,20 @@ export async function onRequestPost({ request, env }) {
     );
   }
 }
+
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+    if (url.pathname !== "/api/contact") {
+      return json({ error: "Not found." }, 404);
+    }
+
+    if (request.method === "GET") return onRequestGet(env);
+    if (request.method === "POST") return onRequestPost(request, env);
+
+    return new Response(null, {
+      status: 405,
+      headers: { Allow: "GET, POST" },
+    });
+  },
+};
