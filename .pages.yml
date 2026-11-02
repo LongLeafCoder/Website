@@ -1,6 +1,6 @@
 media:
   - name: uploads
-    label: Image uploads
+    label: Site and project image uploads
     input: assets/uploads
     output: /assets/uploads
 
@@ -93,6 +93,40 @@ content:
         type: file
         path: scripts/posts.js
         format: code
+  - name: working-projects
+    label: Working-on projects
+    type: file
+    path: content/projects.json
+    format: json
+    fields:
+      - name: projects
+        label: Projects
+        type: object
+        list:
+          min: 1
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: title
+            label: Project title
+            type: string
+            required: true
+          - name: category
+            label: Category
+            type: string
+          - name: image
+            label: Project photo
+            type: image
+            required: true
+          - name: imageAlt
+            label: Photo description for accessibility
+            type: string
+            required: true
+          - name: description
+            label: Project description
+            type: text
+            required: true
   - name: writing-posts
     label: Writing posts
     type: file
