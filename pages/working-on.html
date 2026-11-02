@@ -128,6 +128,15 @@
         height: 430px;
         object-fit: cover;
       }
+      .feature > img,
+      .gallery .card img {
+        cursor: zoom-in;
+      }
+      .feature > img:focus-visible,
+      .gallery .card img:focus-visible {
+        outline: 3px solid var(--clay);
+        outline-offset: 3px;
+      }
       .feature-copy {
         padding: 38px;
         color: var(--paper);
@@ -171,6 +180,87 @@
         color: var(--muted);
         font-size: 13px;
         line-height: 1.5;
+      }
+      .project-slideshow {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        max-width: none;
+        height: 100dvh;
+        max-height: none;
+        margin: 0;
+        padding: 24px;
+        overflow: hidden;
+        border: 0;
+        color: var(--paper);
+        background: transparent;
+      }
+      .project-slideshow::backdrop {
+        background: rgba(15, 13, 12, 0.96);
+      }
+      .project-slideshow-layout {
+        display: grid;
+        grid-template-columns: 52px minmax(0, 1fr) 52px;
+        align-items: center;
+        gap: clamp(8px, 2vw, 24px);
+        width: 100%;
+        height: 100%;
+      }
+      .project-slideshow-figure {
+        display: grid;
+        grid-template-rows: minmax(0, 1fr) auto;
+        align-items: center;
+        min-width: 0;
+        height: 100%;
+        margin: 0;
+      }
+      .project-slideshow-image {
+        width: 100%;
+        height: calc(100dvh - 104px);
+        object-fit: contain;
+      }
+      .project-slideshow-caption {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding-top: 12px;
+        color: var(--paper);
+        font-size: 14px;
+      }
+      .project-slideshow-count {
+        flex: 0 0 auto;
+        color: #cfc5ba;
+        font: 12px "DM Mono", monospace;
+      }
+      .project-slideshow-button {
+        display: grid;
+        place-items: center;
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        border: 1px solid rgba(243, 238, 229, 0.5);
+        border-radius: 50%;
+        color: var(--paper);
+        background: rgba(33, 27, 23, 0.75);
+        font-size: 26px;
+        cursor: pointer;
+      }
+      .project-slideshow-button:hover {
+        color: var(--ink);
+        background: var(--paper);
+      }
+      .project-slideshow-close {
+        position: absolute;
+        z-index: 1;
+        top: 16px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+        font-size: 28px;
+      }
+      .project-slideshow button:focus-visible {
+        outline: 3px solid var(--sun);
+        outline-offset: 3px;
       }
       footer {
         padding: 62px 0 21px;
@@ -350,6 +440,30 @@
         }
         .company-logo img {
           width: min(100%, 210px);
+        }
+      }
+      @media (max-width: 600px) {
+        .project-slideshow {
+          padding: 14px;
+        }
+        .project-slideshow-layout {
+          grid-template-columns: 40px minmax(0, 1fr) 40px;
+          gap: 5px;
+        }
+        .project-slideshow-button {
+          width: 38px;
+          height: 38px;
+          font-size: 22px;
+        }
+        .project-slideshow-image {
+          height: calc(100dvh - 82px);
+        }
+        .project-slideshow-caption {
+          font-size: 12px;
+        }
+        .project-slideshow-close {
+          top: 8px;
+          right: 8px;
         }
       }
     </style>
@@ -536,5 +650,48 @@
         </div>
       </div>
     </footer>
+    <dialog
+      class="project-slideshow"
+      id="project-slideshow"
+      aria-labelledby="project-slideshow-title"
+    >
+      <button
+        class="project-slideshow-button project-slideshow-close"
+        type="button"
+        data-slideshow-close
+        aria-label="Close slideshow"
+      >
+        &times;
+      </button>
+      <div class="project-slideshow-layout">
+        <button
+          class="project-slideshow-button"
+          type="button"
+          data-slideshow-previous
+          aria-label="Previous photo"
+        >
+          &larr;
+        </button>
+        <figure class="project-slideshow-figure">
+          <img class="project-slideshow-image" alt="" />
+          <figcaption class="project-slideshow-caption">
+            <span id="project-slideshow-title"></span>
+            <span
+              class="project-slideshow-count"
+              data-slideshow-count
+              aria-live="polite"
+            ></span>
+          </figcaption>
+        </figure>
+        <button
+          class="project-slideshow-button"
+          type="button"
+          data-slideshow-next
+          aria-label="Next photo"
+        >
+          &rarr;
+        </button>
+      </div>
+    </dialog>
   </body>
 </html>
