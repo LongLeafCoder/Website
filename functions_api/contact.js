@@ -518,13 +518,6 @@ async function onRequestPost(request, env) {
     }
 
     const verification = await verificationResponse.json();
-    console.log("Turnstile diagnostic:", {
-    success: verification.success,
-    hostname: verification.hostname,
-    expectedHostname: new URL(request.url).hostname,
-    action: verification.action,
-    errorCodes: verification["error-codes"],
-});
     const expectedHostname = new URL(request.url).hostname;
     if (
       !verification.success ||
