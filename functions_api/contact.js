@@ -519,13 +519,23 @@ async function onRequestPost(request, env) {
 
     const verification = await verificationResponse.json();
     const expectedHostname = new URL(request.url).hostname;
-    if (
-      !verification.success ||
-      verification.hostname !== expectedHostname ||
-      verification.action !== "contact"
-    ) {
-      return json({ error: "Verification failed. Please try again." }, 400);
-    }
+    if (!verification.success) {
+  console.error("Turnstile rejected:", verification["error-codes"]);
+  return json({ error: "Cloudflare rejected verification." }, 400);
+  }
+
+  if (verification.hostname !== expectedHostname) {
+    console.error("Hostname mismatch:", {
+      actual: verification.hostname,
+      expected: expectedHostname,
+    });
+    return json({ error: "Hostname mismatch." }, 400);
+  }
+
+  if (verification.action !== "contact") {
+    console.error("Action mismatch:", verification.action);
+    return json({ error: "Action mismatch." }, 400);
+  }
 
     const emailResponse = await fetch(RESEND_EMAIL_URL, {
       method: "POST",
