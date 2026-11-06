@@ -34,7 +34,7 @@
 
     if (footer) {
       footer.id = 'site-footer';
-      footer.innerHTML = '<div class="wrap"><div class="footer-main"><div class="footer-brand"><strong>Tarheel Maker</strong><p>Wood-burned art, heritage woodworking, and thoughtful digital work.</p><p>Made in North Carolina.</p></div><div class="footer-column"><h3>Explore</h3><a href="/pages/working-on.html">What I’m working on</a><a href="/pages/about.html">About</a><a href="/pages/writings.html">Writings</a><a href="/pages/contact.html">Contact</a></div><div class="footer-column"><h3>Elsewhere</h3><a href="https://pin.it/8JbKgV1SU" target="_blank" rel="noopener noreferrer">Pinterest</a><a href="https://oldsouthwoodworks.com" target="_blank" rel="noopener noreferrer">Old South Woodworks</a></div></div><div class="footer-bottom"><span>© 2026 Tarheel Maker</span><span>Made with attention / North Carolina</span><a class="admin-login-link" href="https://app.pagescms.org" target="_blank" rel="noopener noreferrer">Admin login</a></div></div>';
+      footer.innerHTML = '<div class="wrap"><div class="footer-main"><div class="footer-brand"><strong>Tarheel Maker</strong><p>Wood-burned art, heritage woodworking, and thoughtful digital work.</p><p>Made in North Carolina.</p></div><div class="footer-column"><h3>Explore</h3><a href="/pages/working-on.html">What I’m working on</a><a href="/pages/about.html">About</a><a href="/pages/writings.html">Writings</a><a href="/pages/contact.html">Contact</a></div><div class="footer-column"><h3>Elsewhere</h3><a href="https://pin.it/8JbKgV1SU" target="_blank" rel="noopener noreferrer">Pinterest</a><a href="https://oldsouthwoodworks.com" target="_blank" rel="noopener noreferrer">Old South Woodworks</a></div></div><div class="footer-bottom"><span>© 2026 Tarheel Maker</span><span>Made with attention / North Carolina</span><a class="private-chat-link" href="/pages/secret-chat.html">Private chat · prototype</a><a class="admin-login-link" href="https://app.pagescms.org" target="_blank" rel="noopener noreferrer">Admin login</a></div></div>';
     }
 
     if (!document.getElementById('shared-site-shell-styles')) {
@@ -60,6 +60,8 @@
         #site-footer .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid rgba(243,238,229,.2); padding-top: 16px; color: #c9b9aa; font: 500 11px 'DM Sans', sans-serif; }
         #site-footer .footer-bottom > span:first-child { color: #f6f0e7; }
         #site-footer .admin-login-link { color: inherit; text-decoration: none; }
+        #site-footer .private-chat-link { color: #efc8a5; text-decoration: none; }
+        #site-footer .private-chat-link:hover { color: #f6f0e7; text-decoration: underline; }
         #site-footer .admin-login-link:hover { color: #f6f0e7; text-decoration: underline; }
         @media (max-width: 800px) {
           #site-header .wrap, #site-footer .wrap { width: calc(100% - 36px); }

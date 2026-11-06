@@ -24,6 +24,11 @@ content:
         type: file
         path: pages/contact.html
         format: code
+      - name: private-chat
+        label: Private chat prototype
+        type: file
+        path: pages/secret-chat.html
+        format: code
       - name: shop
         label: Shop page
         type: file
